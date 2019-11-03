@@ -1,10 +1,30 @@
+/* Variables */
+:root{
+   --side-bar-width: 300px;
+}
 /* Native classes */
+body {
+   /* border:2px black solid; */
+   text-align:center;
+   /* background-color:black; */
+   /* color:white; */
+}
+
 a, a:active, a:focus {
    outline: none;
 }
 
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+form {
+   font-size:120%;
+}
+
 div {
-   /*border:1px solid red;*/    /*For debugging XD  */
+   /* border:1px solid red; */ 
    border: none !important;
    margin: auto;
    text-align: center;
@@ -17,41 +37,59 @@ img {
 }
 
 .header {
+   /* background-color:white; */
    width: 100%;
    height: auto;
    text-align: center;
 }
 
-.full_site_content {
-   width: 100%;
-   height: auto;
-   text-align: center;
+.full_content{
+   /* background-color:white; */
 }
 
-.days {
-   /* min-width: 325px; */
-   font-size: 110%;
-   padding-bottom:5px;
-   text-align: center;
+.day_time{
+   line-height:50px;
+   padding:10px;
 }
 
-.hours {
-   font-size:110%;
-   padding-bottom:5px;
-   text-align: center;
+.plot{
+   /* height:500px; */
 }
 
-.footer {
-   width: 100%;
-   height: auto;
-   text-align: center;
+.sidebar{
+   font-size:120%;
+   border:1px blue solid;
+   position: fixed;
+   height: 100%;
+   width: 0px;
+   display:none;
+   color:white;
+   z-index: 1;
+   top: 0;
+   right: 0;
+   line-height: 200%;
+   overflow-x: hidden;
+   padding-top: 60px;
 }
 
-/* User defined */
+#options_button{
+   position:fixed;
+   background-color: rgba(55,55,55,0.8);
+   top:50%;
+   right:10px;
+   width: 50px;
+   height: 100px;
+   line-height:90px;   /*has to be the same as height*/
+   /*there's something I'm not getting. this has to be repeated*/
+   border-top-left-radius:10px;
+   border-top-left-radius:10px;
+   border-bottom-left-radius:10px;
+
+}
+
 .Maps {
    /*border:1px solid black;*/
    position: relative;
-   min-width:600px;  /* To avoid problem with options menu*/
    width: 100%;
    padding: 0px;
    top: 0px;
@@ -60,30 +98,17 @@ img {
    text-align: center;
 }
 
-@media only screen and (max-width: 600px) {
-   .Maps {
-      border:3px solid blue;
-      position: relative;
-      min-width:600px;  /* To avoid problem with options menu*/
-      width: 100%;
-      padding: 0px;
-      top: 0px;
-      left: 0px;
-      transform: translateX(0%);
-      text-align: center;
-   }
-}
-
-.under {
+.base_map {
+   position: static;
    padding: 0px;
    left: 0px;
    top: 0px;
    width: 100%;
    height:auto;
    z-index: -1;
-   position: relative;
    opacity:1;
 }
+
 .over {
    position: absolute;
    left: 50%;
@@ -94,37 +119,52 @@ img {
    opacity:1;
    z-index: 1;
 }
+
 .Sover {
    position: absolute;
    left: 50%;
    top: 0px;
    width: 100%;
    height:auto;
-   z-index: 1;
    transform: translateX(-50%);
+   opacity:1;
    mix-blend-mode: overlay;
-   opacity:0.8;
+   z-index: 1;
 }
+
 .Vover {
    position: absolute;
    left: 50%;
    top: 0px;
    width: 100%;
    height:auto;
-   z-index: 1;
    transform: translateX(-50%);
-   opacity:0.7;
+   opacity:1;
+   z-index: 1;
 }
+
 .Oover {
    position: absolute;
    left: 50%;
    top: 0px;
    width: 100%;
    height:auto;
-   z-index: 1;
    transform: translateX(-50%);
    opacity:1;
-   visibility: hidden;
+   z-index: 1;
+}
+
+.COover {
+   position: absolute;
+   /* left: 50%; */
+   left:0px;
+   top: 0px;
+   background:rgba(255,255,255,0.7);
+   width: 60%;
+   height:auto;
+   /* transform: translateX(-50%); */
+   opacity:1;
+   z-index: 1;
 }
 
 .day_and_time {
@@ -133,7 +173,7 @@ img {
 }
 .button_inactive {
    background-color: rgba(65,165,234,0.7);
-   font-size:100%;
+   font-size:120%;
    padding: 5px;
    border-radius: 10px;
    border: 0px;
@@ -142,7 +182,7 @@ img {
 }
 .button_active {
    background-color: rgba(65,165,234,1);
-   font-size:100%;
+   font-size:150%;
    padding: 5px;
    border-radius: 10px;
    border: 0px;

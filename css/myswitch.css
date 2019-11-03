@@ -3,15 +3,14 @@
   --switch-hsize: 60px;
   --switch-vsize: 24px;
 }
-.test_switch {position: relative;
-              z-index: 1000;
-              left: 0px;
-              top: 0px;
-              font-size: 20px;
-              padding: 5px;
-              border-radius: 10px;
-              background-color: rgba(255, 255, 255, 0.7);
-              align-items:center;
+.test_switch {
+   left: 0px;
+   top: 0px;
+   font-size: 20px;
+   padding: 5px;
+   border-radius: 10px;
+   background-color: rgba(255, 255, 255, 0.7);
+   align-items:center;
 }
 .switch {
   position: relative;
