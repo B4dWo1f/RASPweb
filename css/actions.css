@@ -1,0 +1,17 @@
+#options_button:hover {
+   background-color: rgba(40,40,40,0.97);
+   right: var(--side-bar-width);
+}
+
+#options_button:hover .sidebar {
+   background-color: rgba(40,40,40,0.97);
+   display: block;
+   width: var(--side-bar-width);
+   height:100%;
+   font-size:70%;
+}
+
+#options_button:hover #open_logo {
+   -webkit-transform: scaleX(-1);
+   transform: scaleX(-1);
+}

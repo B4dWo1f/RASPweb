@@ -50,30 +50,38 @@ label {
     white-space:nowrap;
 }
 
-.showhim {
-   position: absolute;
-   background-color: rgba(0,0,0,0.8);
-   left: 20px;
-   top:  20px;
-   min-width:70px;
-   min-height:22px;
-   width: 10%;
-   height:5%;
-   z-index: 10;
-   font-size: 125%;
-   text-align: center;
-   vertical-align: middle;
-   color: white;
-   border: none;
+.showVector {
+   position:absolute;
+   z-index:1000;
+   background-color: rgba(255,0,0,0.8);
+   right:10px;
+   width:50px;
+   height:50px;
+   /* position: absolute; */
+   /* background-color: rgba(0,0,0,0.8); */
+   /* left: 20px; */
+   /* top:  20px; */
+   /* min-width:70px; */
+   /* min-height:22px; */
+   /* width: 10%; */
+   /* height:5%; */
+   /* z-index: 10; */
+   /* font-size: 125%; */
+   /* text-align: center; */
+   /* vertical-align: middle; */
+   /* color: white; */
+   /* border: none; */
 }
 
-.showhim:hover .showme {
+.showVector:hover .showme {
    display: block;
+   width:250px;
+   background-color: rgba(0,0,0,0.75);
    font-size:70%;
 }
 
-.showhim:hover {
-   background-color: rgba(0,0,0,0.75);
+.showVector:hover {
+   background-color: rgba(0,255,0,0.75);
    max-width:80%;
    font-size:200%;
    width:auto;
@@ -83,14 +91,16 @@ label {
 
 .showme {
    /* border:2px solid blue; */    /*For debugging XD  */
-   position: relative;
+   position: fixed;
    display: none;
-   width: 100%;
-   font-size:100%;
-   min-width: 100px;
-   height: auto;
+   width:0;
+   height:100%;
+   /* width: 100%; */
+   /* font-size:100%; */
+   /* min-width: 100px; */
+   /* height: 100%; */
    /* padding-right: 30px; */
-   padding-bottom: 20px;
-   padding: 5px;
+   /* padding-bottom: 20px; */
+   /* padding: 5px; */
    /* background-color: rgba(0,0,0,0.75); */
 }
