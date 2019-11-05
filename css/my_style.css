@@ -179,8 +179,12 @@ img {
    /* left: 50%; */
    left:0px;
    top: 0px;
-   background:rgba(255,255,255,0.7);
+   background:rgba(0,0,0,0.7);
+   padding-top:5px;
+   padding-left:7px;
+   padding-right:7px;
    width: 60%;
+   border-radius: 5px;
    height:auto;
    /* transform: translateX(-50%); */
    opacity:1;
