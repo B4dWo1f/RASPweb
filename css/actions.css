@@ -1,10 +1,19 @@
+.button_inactive:hover {
+   background-color: var(--button-inactiveHover);
+}
+
+.button_active:hover {
+   background-color: var(--button-activeHover);
+}
+
 #options_button:hover {
-   background-color: rgba(40,40,40,0.97);
+   background-color: var(--sideBarColor);
    right: var(--side-bar-width);
 }
 
 #options_button:hover .sidebar {
-   background-color: rgba(40,40,40,0.97);
+   /* background-color: rgba(40,40,40,0.97); */
+   background-color: var(--sideBarColor);
    display: block;
    width: var(--side-bar-width);
    height:100%;
