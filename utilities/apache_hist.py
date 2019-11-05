@@ -2,7 +2,9 @@
 # -*- coding: UTF-8 -*-
 
 import numpy as np
-# import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.use('Agg')
+import matplotlib.pyplot as plt
 import os
 
 def files(path='.',hidden=False,abspath=False):
@@ -56,8 +58,9 @@ print('   --------')
 for i in inds[-7:]:
    print(Y[i],'',L[i])
 
-# fig, ax = plt.subplots()
-# ax.hist(Y,bins=len(Y))
-# ax.set_xlabel('# of visits')
-# ax.set_ylabel('# of people')
-# plt.show()
+fig, ax = plt.subplots()
+ax.hist(Y,bins=len(Y))
+ax.set_xlabel('# of visits')
+ax.set_ylabel('# of people')
+fig.savefig('web_usage.png')
+#plt.show()
