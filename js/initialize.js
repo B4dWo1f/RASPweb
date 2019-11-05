@@ -2,7 +2,9 @@
 var title_prop = {'blwind':'BL Wind', 'bltopwind':'BL Top Wind', 'sfcwind':'Surface Wind',
                   'cape': 'CAPE', 'wstar':'Thermal Updraft Velocity', 'hbl':'Height of BL Top',
                   'bsratio':'Buoyancy/Shear Ratio', 'blcloudpct': '1h Accumulated Rain',
-                  'mslpress':'Mean Sea Level Pressure'}
+                  'mslpress':'Mean Sea Level Pressure', 'wblmaxmin': 'BL Max.Up/Down Motion',
+                  'hglider': 'Max.Therm.Height'}
+
 //var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
 var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
