@@ -1,17 +1,35 @@
 /* Variables */
 :root{
    --side-bar-width: 300px;
+   --primaryColor: #194054;
+   --textColor: #e0e0e0;
+   --sideBarColor: #042534f2;
+   --button-inactiveHover: #1d6bda;
+   --button-activeHover: #0053c9;
 }
+
 /* Native classes */
 body {
    /* border:2px black solid; */
    text-align:center;
+   background-color: var(--primaryColor);
+   color: var(--textColor);
    /* background-color:black; */
    /* color:white; */
 }
 
 a, a:active, a:focus {
    outline: none;
+}
+
+a:hover{
+   font-weight: bold;
+   color: white;
+}
+
+a:visited{
+   font-weight: bold;
+   color: white;
 }
 
 input[type="radio"] {
@@ -48,6 +66,7 @@ img {
 }
 
 .day_time{
+   color: white;
    line-height:50px;
    padding:10px;
 }
@@ -57,13 +76,13 @@ img {
 }
 
 .sidebar{
+   background-color: var(--sideBarColor);
    font-size:120%;
    border:1px blue solid;
    position: fixed;
    height: 100%;
    width: 0px;
    display:none;
-   color:white;
    z-index: 1;
    top: 0;
    right: 0;
@@ -74,12 +93,13 @@ img {
 
 #options_button{
    position:fixed;
-   background-color: rgba(55,55,55,0.8);
+   background-color: var(--sideBarColor);
+   /* background-color: rgba(55,55,55,0.9); */
    top:50%;
    right:10px;
-   width: 50px;
-   height: 100px;
-   line-height:90px;   /*has to be the same as height*/
+   width: 35px;
+   height: 80px;
+   line-height:69px;   /*has to be the same as height*/
    /*there's something I'm not getting. this has to be repeated*/
    border-top-left-radius:10px;
    border-top-left-radius:10px;
@@ -159,8 +179,12 @@ img {
    /* left: 50%; */
    left:0px;
    top: 0px;
-   background:rgba(255,255,255,0.7);
+   background:rgba(0,0,0,0.7);
+   padding-top:5px;
+   padding-left:7px;
+   padding-right:7px;
    width: 60%;
+   border-radius: 5px;
    height:auto;
    /* transform: translateX(-50%); */
    opacity:1;
@@ -171,18 +195,24 @@ img {
    position: static;
    height: 100%;
 }
+
 .button_inactive {
-   background-color: rgba(65,165,234,0.7);
+   background-color: #3060a4;
+   color: var(--textColor);
    font-size:120%;
-   padding: 5px;
+   padding: 7px;
    border-radius: 10px;
    border: 0px;
    outline: none;
    cursor: pointer;
 }
+
 .button_active {
-   background-color: rgba(65,165,234,1);
-   font-size:150%;
+   background-color: #10448e;
+   color: white;
+   font-size:140%;
+   font-weight: bold;
+   box-shadow: 3px 5px 3px black;
    padding: 5px;
    border-radius: 10px;
    border: 0px;

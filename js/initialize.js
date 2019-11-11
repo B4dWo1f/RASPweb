@@ -29,7 +29,7 @@ var Vprop = 'sfcwind';
 var Ndays = 4;
 var Nhours = 12;
 var hour0 = 8;
-var hour = 12;
+var hour = 14;
 
 /* State variables */
 var Opts_menu = false;
@@ -72,16 +72,4 @@ CB_R_layer.src = folder+'/'+'rain1.png';
 
 document.getElementById("days").innerHTML = generate_days();
 
-// Generate hours in local time
-var text = "";
-var i;
-var j;
-for (i = 0; i < Nhours; i++) {
-   j = i + hour0;
-   text += '<button type="button" class="button_inactive" '
-   text += 'id="button_hour_'+i.toString()+'" ';
-   text += 'onclick="javascript:change_hour('+i+');">';
-   text += j + ":00";
-   text += '</button>   ';
-}
-document.getElementById("hours").innerHTML = text.slice(0, -2);
+document.getElementById("hours").innerHTML = generate_hours();
