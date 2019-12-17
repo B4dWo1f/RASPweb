@@ -46,7 +46,7 @@
             Península
          </div>
          <!-- GIS -->
-         <div style="padding-bottom:2px;">
+         <div style="padding-bottom: 2px;">
             <form>
                <input type="checkbox" id="chkGnd"    onChange="javascript:toggleVisibility(['gnd_layer']);" autocomplete="off">Color
                <input type="checkbox" id="chkCCAA"   onChange="javascript:toggleVisibility(['ccaa_layer']);" checked autocomplete="off">Provincias
@@ -58,24 +58,24 @@
 
          <!-- ~~~~~~ MAPS ~~~~~~ -->
          <div class="Maps">
-            <img class="base_map" id="terrain_layer" style="visibility:visible">
-            <img class="over" id="gnd_layer"         style="visibility:hidden">
-            <img class="over" id="ccaa_layer"        style="visibility:visible">
-            <img class="over" id="rivers_layer"      style="visibility:visible">
-            <img class="over" id="roads_layer"       style="visibility:hidden">
-            <img class="over" id="takeoffs_layer"    style="visibility:visible">
+            <img class="base_map" id="terrain_layer" style="visibility:visible;">
+            <img class="over" id="gnd_layer"         style="visibility:hidden;">
+            <img class="over" id="ccaa_layer"        style="visibility:visible;">
+            <img class="over" id="rivers_layer"      style="visibility:visible;">
+            <img class="over" id="roads_layer"       style="visibility:hidden;">
+            <img class="over" id="takeoffs_layer"    style="visibility:visible; z-index: 10;">
             <!-- Meteo -->
-            <img class="Sover" id="scalar_layer"     style="visibility:visible">
-            <img class="Vover" id="vector_layer"     style="visibility:visible">
+            <img class="Sover" id="scalar_layer"     style="visibility:visible;">
+            <img class="Vover" id="vector_layer"     style="visibility:visible;">
             <!-- overlay layer -->
-            <img class="Oover" id="clouds_layer"     style="visibility:hidden">
-            <img class="Oover" id="rain_layer"       style="visibility:hidden">
-            <img class="Oover" id="press_layer"      style="visibility:hidden">
-            <img class="COover" id="rain_cbar_layer" style="visibility:hidden">
+            <img class="Oover" id="clouds_layer"     style="visibility:hidden;">
+            <img class="Oover" id="rain_layer"       style="visibility:hidden;">
+            <img class="Oover" id="press_layer"      style="visibility:hidden;">
+            <img class="COover" id="rain_cbar_layer" style="visibility:hidden;">
          </div>
          <!-- Colorbar -->
          <div class="Maps">
-            <img class="base_map" id="cbar_layer" style="visibility:visible">
+            <img class="base_map" id="cbar_layer" style="visibility:visible;">
          </div>
          <!-- ~~~~~~ MAPS ~~~~~~ -->
          <!-- ~~~~~~ SIDE-BAR ~~~~~~ -->
@@ -86,7 +86,7 @@
                <hr/>   <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   VECTOR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
                   Vector Layer:<br>
-                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="70" oninput="javascript:set_opacity(this.value,['vector_layer']);">
+                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="65" oninput="javascript:set_opacity(this.value,['vector_layer']);">
                </label>
                <form>
                   <label>
@@ -106,7 +106,7 @@
                <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   SCALAR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
                   Scalar Layer:<br>
-                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="80" oninput="javascript:set_opacity(this.value,['scalar_layer']);">
+                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="70" oninput="javascript:set_opacity(this.value,['scalar_layer']);">
                </label>
                <form>
                   <label>
@@ -147,8 +147,8 @@
                      <!-- <span>BL Max.Up/Down Motion</span> -->
                   </label>
                </form>
-               <hr style="width:85%">
-               <label style="font-size:150%;">
+               <hr style="width: 85%;">
+               <label style="font-size: 150%;">
                   Overlay Layer:<br>
                   <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50"
                                                                    oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
@@ -159,10 +159,9 @@
                </form>
                <hr>
                <label style="font-size:150%;">
-                  Blend Mode Select<br>
+                  Blend Mode<br>
                <div class="custom-select" style="width:200px;">
                   <select id="blend-select">
-                     <option value="0"  onclick="javascript:select_blend()">Select Blend-Mode:</option>
                      <option value="1"  onclick="javascript:select_blend()">Multiply</option>
                      <option value="2"  onclick="javascript:select_blend()">Screen</option>
                      <option value="3"  onclick="javascript:select_blend()">Overlay</option>
