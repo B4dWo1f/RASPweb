@@ -6,7 +6,7 @@
    --sideBarColor: #042534f2;
    --button-inactiveHover: #1d6bda;
    --button-activeHover: #0053c9;
-   --scalar-blend: color-burn;
+   --scalar-blend: multiply;
 /* multiply */
 /* screen */
 /* overlay */
