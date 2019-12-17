@@ -6,6 +6,13 @@
    --sideBarColor: #042534f2;
    --button-inactiveHover: #1d6bda;
    --button-activeHover: #0053c9;
+   --scalar-blend: color-burn;
+/* multiply */
+/* screen */
+/* overlay */
+/* darken */
+/* color */
+/* color-burn */
 }
 
 /* Native classes */
@@ -147,8 +154,8 @@ img {
    width: 100%;
    height:auto;
    transform: translateX(-50%);
-   opacity:1;
-   mix-blend-mode: overlay;
+   opacity: var(scalar-opacity);
+   mix-blend-mode: var(--scalar-blend);
    z-index: 1;
 }
 

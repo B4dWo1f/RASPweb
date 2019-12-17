@@ -247,9 +247,16 @@ function closeNav() {
 }
 
 function check(id) {
-    document.getElementById(id).checked = true;
+   document.getElementById(id).checked = true;
 }
 
 function uncheck(id) {
-    document.getElementById(id).checked = false;
+   document.getElementById(id).checked = false;
+}
+
+function select_blend() {
+   var e = document.getElementById("blend-select");
+   var blending = e.options[e.selectedIndex].text;
+   document.documentElement.style.setProperty('--scalar-blend', blending);
+   replot_general();
 }

@@ -157,9 +157,20 @@
                   <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off">Nubes y lluvia
                   <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off">Isobaras
                </form>
-
                <hr>
-
+               <label style="font-size:150%;">
+                  Blend Mode Select<br>
+               <div class="custom-select" style="width:200px;">
+                  <select id="blend-select">
+                     <option value="0"  onclick="javascript:select_blend()">Select Blend-Mode:</option>
+                     <option value="1"  onclick="javascript:select_blend()">Multiply</option>
+                     <option value="2"  onclick="javascript:select_blend()">Screen</option>
+                     <option value="3"  onclick="javascript:select_blend()">Overlay</option>
+                     <option value="4"  onclick="javascript:select_blend()">Darken</option>
+                     <option value="5"  onclick="javascript:select_blend()">Color</option>
+                     <option value="6"  onclick="javascript:select_blend()">Color-burn</option>
+                  </select>
+               </div>
             </div>
          </div>
          <!-- ~~~~~~ SIDE-BAR ~~~~~~ -->
@@ -171,5 +182,6 @@
    </div>
 
 <script type="text/javascript" src='js/initialize.js'> </script>
+
 </body>
 </html>
