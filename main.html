@@ -20,11 +20,11 @@
       <table align="center">
          <tr>
             <td align="right">
-               <a href="http://www.denubeanube.com/"><img src="/dnn.svg" alt="De Nube a Nube" width="150" height="81" align="center"></a>
+               <a href="http://www.denubeanube.com/"><img src="/dnn_dark.svg" alt="De Nube a Nube" width="150" height="81" align="center"></a>
             </td>
             <td align="left">
                <font size="+3"><b>RASP</b> Sistema Central</font><br>
-               <a href="http://www.drjack.info/RASP/">RASP</a> by Dr. Jack, local site by <a href="http://raspuri.mooo.com/RASP/index.php">Oriol</a> & Noel
+               <a href="http://www.drjack.info/RASP/">RASP</a> del Dr. Jack. Sitio local de <a href="http://raspuri.mooo.com/RASP/index.php">Oriol</a> & Noel
             </td>
          </tr>
       </table>
@@ -46,7 +46,7 @@
             Península
          </div>
          <!-- GIS -->
-         <div style="padding-bottom:2px;">
+         <div style="padding-bottom: 2px;">
             <form>
                <input type="checkbox" id="chkGnd"    onChange="javascript:toggleVisibility(['gnd_layer']);" autocomplete="off">Color
                <input type="checkbox" id="chkCCAA"   onChange="javascript:toggleVisibility(['ccaa_layer']);" checked autocomplete="off">Provincias
@@ -58,98 +58,105 @@
 
          <!-- ~~~~~~ MAPS ~~~~~~ -->
          <div class="Maps">
-            <img class="base_map" id="terrain_layer" style="visibility:visible">
-            <img class="over" id="gnd_layer"         style="visibility:hidden">
-            <img class="over" id="ccaa_layer"        style="visibility:visible">
-            <img class="over" id="rivers_layer"      style="visibility:visible">
-            <img class="over" id="roads_layer"       style="visibility:hidden">
-            <img class="over" id="takeoffs_layer"    style="visibility:visible">
+            <img class="base_map" id="terrain_layer" style="visibility:visible;">
+            <img class="over" id="gnd_layer"         style="visibility:hidden;">
+            <img class="over" id="ccaa_layer"        style="visibility:visible;">
+            <img class="over" id="rivers_layer"      style="visibility:visible;">
+            <img class="over" id="roads_layer"       style="visibility:hidden;">
+            <img class="over" id="takeoffs_layer"    style="visibility:visible; z-index: 10;">
             <!-- Meteo -->
-            <img class="Sover" id="scalar_layer"     style="visibility:visible">
-            <img class="Vover" id="vector_layer"     style="visibility:visible">
+            <img class="Sover" id="scalar_layer"     style="visibility:visible;">
+            <img class="Vover" id="vector_layer"     style="visibility:visible;">
             <!-- overlay layer -->
-            <img class="Oover" id="clouds_layer"     style="visibility:hidden">
-            <img class="Oover" id="rain_layer"       style="visibility:hidden">
-            <img class="Oover" id="press_layer"      style="visibility:hidden">
-            <img class="COover" id="rain_cbar_layer" style="visibility:hidden">
+            <img class="Oover" id="clouds_layer"     style="visibility:hidden;">
+            <img class="Oover" id="rain_layer"       style="visibility:hidden;">
+            <img class="Oover" id="press_layer"      style="visibility:hidden;">
+            <img class="COover" id="rain_cbar_layer" style="visibility:hidden;">
          </div>
          <!-- Colorbar -->
          <div class="Maps">
-            <img class="base_map" id="cbar_layer" style="visibility:visible">
+            <img class="base_map" id="cbar_layer" style="visibility:visible;">
          </div>
          <!-- ~~~~~~ MAPS ~~~~~~ -->
          <!-- ~~~~~~ SIDE-BAR ~~~~~~ -->
          <div id="options_button" align="center">
-            <img id="open_logo" src="/open.png" width="20px" height=auto align="middle" style="opacity:0.5;">
+            <img id="open_logo" src="/open.svg" width="20px" height=auto align="middle">
             <div id="options_sidebar" class="sidebar">
-               <p style="font-size:170%;">Options</p>
+               <p style="font-size:170%;">Opciones</p>
                <hr/>   <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   VECTOR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
-                  Vector Layer:<br>
-                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="70" oninput="javascript:set_opacity(this.value,['vector_layer']);">
+                  Líneas de Viento:<br>
+                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="65" oninput="javascript:set_opacity(this.value,['vector_layer']);">
                </label>
                <form>
                   <label>
                      <input type="radio" id="VchkSFCwind"  onChange="javascript:replot_vector('sfcwind');" name='foo' checked>
-                     <span>SFCwind</span>
+                     <span>Superficie</span>
                   </label>
                   <label>
                      <input type="radio" id="VchkBLwind"  onChange="javascript:replot_vector('blwind');" name='foo'>
-                     <span>BLwind</span>
+                     <span>Promedio</span>
                   </label>
                   <label>
                      <input type="radio" id="VchkBLTOPwind"  onChange="javascript:replot_vector('bltopwind');" name='foo'>
-                     <span>BLTopwind</span>
+                     <span>Techo</span>
                   </label>
                </form>
                <hr style="width:85%;">
                <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   SCALAR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
-                  Scalar Layer:<br>
-                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="80" oninput="javascript:set_opacity(this.value,['scalar_layer']);">
+                  Aerología:
+                  <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="70" oninput="javascript:set_opacity(this.value,['scalar_layer']);">
                </label>
                <form>
+                  <p align='left' style="line-height:1px;">&nbsp;&nbsp;Viento</p>
                   <label>
                      <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked>
-                     <span>SFCwind</span>
+                     <span>Superficie</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkBLwind"  onChange="javascript:replot_scalar('blwind');" name='foo'>
-                     <span >BLwind</span>
+                     <span >Promedio</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkBLTOPwind"  onChange="javascript:replot_scalar('bltopwind');" name='foo'>
-                     <span>BLTopwind</span>
-                  </label> <br/>   <!-- XXX forced breakline -->
-                  <label>
-                     <input type="radio" id="SchkHBL"  onChange="javascript:replot_scalar('hbl');" name='foo'>
-                     <span>Height BL</span>
+                     <span>Techo</span>
+                  <p align='left' style="line-height:1px;">&nbsp;&nbsp;Térmicas</p>
                   </label>
+                  <!-- <br/>   <1!-- XXX forced breakline --1> -->
+                  <!-- <label> -->
+                  <!--    <input type="radio" id="SchkHBL"  onChange="javascript:replot_scalar('hbl');" name='foo'> -->
+                  <!--    <span>Height BL</span> -->
+                  <!-- </label> -->
                   <label>
                      <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('hglider');" name='foo'>
-                     <span>Max. Height Thermal</span>
+                     <span>Techo (Azul)</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkWstar"  onChange="javascript:replot_scalar('wstar');" name='foo'>
-                     <span>Thermals</span>
+                     <span>Térmica</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkCAPE"  onChange="javascript:replot_scalar('cape');" name='foo'>
                      <span>CAPE</span>
                   </label> <br/>
-                  <label>
-                     <input type="radio" id="SchkBSratio"  onChange="javascript:replot_scalar('bsratio');" name='foo'>
-                     <span>B/S Ratio</span>
-                  </label>
+                  <!-- <label> -->
+                  <!--    <input type="radio" id="SchkBSratio"  onChange="javascript:replot_scalar('bsratio');" name='foo'> -->
+                  <!--    <span>B/S Ratio</span> -->
+                  <!-- </label> -->
                   <label>
                      <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('wblmaxmin');" name='foo'>
-                     <span>BL Max. &uarr;/&darr; Motion</span>
-                     <!-- <span>BL Max.Up/Down Motion</span> -->
+                     <span>Convergencias</span>
+                  </label>
+                  <label>
+                     <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('zsfclcl');" name='foo'>
+                     <span>Techo (nube)</span>
+                     <!-- <span>Cu Cloudbase (CuPot&gt0)</span> -->
                   </label>
                </form>
-               <hr style="width:85%">
-               <label style="font-size:150%;">
-                  Overlay Layer:<br>
+               <hr style="width: 85%;">
+               <label style="font-size: 150%;">
+                  Meteo:<br>
                   <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50"
                                                                    oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
                </label>
@@ -157,9 +164,20 @@
                   <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off">Nubes y lluvia
                   <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off">Isobaras
                </form>
-
                <hr>
-
+               <label style="font-size:150%;">
+                  Tipo de Transparencia<br>
+               <div class="custom-select" style="width:200px;">
+                  <select id="blend-select">
+                     <option value="1"  onclick="javascript:select_blend()">Darken</option>
+                     <option value="2"  onclick="javascript:select_blend()">Multiply</option>
+                     <option value="3"  onclick="javascript:select_blend()">Color-burn</option>
+                     <option value="4"  onclick="javascript:select_blend()">Overlay</option>
+                     <option value="5"  onclick="javascript:select_blend()">Color</option>
+                     <option value="6"  onclick="javascript:select_blend()">Screen</option>
+                  </select>
+               </div>
+               <p>Descripcion de los <a href="http://www.drjack.info/RASP/INFO/parameters.html">parametros</a></p>
             </div>
          </div>
          <!-- ~~~~~~ SIDE-BAR ~~~~~~ -->
@@ -171,5 +189,6 @@
    </div>
 
 <script type="text/javascript" src='js/initialize.js'> </script>
+
 </body>
 </html>

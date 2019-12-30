@@ -160,7 +160,12 @@ function generate_days(){
    var i = 0;
    for (var key_sc in valid_dates) {
       var Vdate = valid_dates[key_sc][domain];
-      text += '<button type="button" class="button_inactive" '
+      if (i==0){
+         text += '<button type="button" class="button_active" '
+      }
+      else{
+         text += '<button type="button" class="button_inactive" '
+      }
       text += 'id="button_day_'+i+'" ';
       text += 'onclick="javascript:change_day('+i+');">';
       text += days[Vdate.getDay()];
@@ -169,6 +174,27 @@ function generate_days(){
       }
       text += '</button>   ';
       i += 1;
+   }
+   return text.slice(0, -2);
+}
+
+function generate_hours(){
+   // Generate hours in local time
+   var text = "";
+   var i;
+   var j;
+   for (i = 0; i < Nhours; i++) {
+      j = i + hour0;
+      if (j==hour){
+         text += '<button type="button" class="button_active" '
+      }
+      else{
+         text += '<button type="button" class="button_inactive" '
+      }
+      text += 'id="button_hour_'+i.toString()+'" ';
+      text += 'onclick="javascript:change_hour('+i+');">';
+      text += j + ":00";
+      text += '</button>   ';
    }
    return text.slice(0, -2);
 }
@@ -221,9 +247,16 @@ function closeNav() {
 }
 
 function check(id) {
-    document.getElementById(id).checked = true;
+   document.getElementById(id).checked = true;
 }
 
 function uncheck(id) {
-    document.getElementById(id).checked = false;
+   document.getElementById(id).checked = false;
+}
+
+function select_blend() {
+   var e = document.getElementById("blend-select");
+   var blending = e.options[e.selectedIndex].text;
+   document.documentElement.style.setProperty('--scalar-blend', blending);
+   replot_general();
 }
