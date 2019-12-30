@@ -9,7 +9,7 @@ var title_prop = {'blwind':'Viento Promedio', 'bltopwind':'Viento Techo', 'sfcwi
                   'cape': 'CAPE', 'wstar':'Térmica', 'hbl':'Altura Capa Convectiva',
                   'bsratio':'Buoyancy/Shear Ratio', 'blcloudpct': 'Lluvia acumulada en 1h',
                   'mslpress':'Presión a nivel del mar', 'wblmaxmin': 'Convergencia',
-                  'hglider': 'Techo (Azul)'}
+                  'hglider': 'Techo (Azul)', 'zsfclcl':'Base nube', 'zblcl':'Cielo cubierto'}
 
 //var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 // var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
