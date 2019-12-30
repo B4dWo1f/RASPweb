@@ -24,7 +24,7 @@
             </td>
             <td align="left">
                <font size="+3"><b>RASP</b> Sistema Central</font><br>
-               <a href="http://www.drjack.info/RASP/">RASP</a> del Dr. Jack. Sitio local de <a href="http://raspuri.mooo.com/RASP/index.php">Oriol</a> & Noel
+               <a href="http://www.drjack.info/RASP/">RASP</a> by Dr. Jack, local site by <a href="http://raspuri.mooo.com/RASP/index.php">Oriol</a> & Noel
             </td>
          </tr>
       </table>
@@ -82,81 +82,74 @@
          <div id="options_button" align="center">
             <img id="open_logo" src="/open.svg" width="20px" height=auto align="middle">
             <div id="options_sidebar" class="sidebar">
-               <p style="font-size:170%;">Opciones</p>
+               <p style="font-size:170%;">Options</p>
                <hr/>   <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   VECTOR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
-                  Líneas de Viento:<br>
+                  Vector Layer:<br>
                   <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="65" oninput="javascript:set_opacity(this.value,['vector_layer']);">
                </label>
                <form>
                   <label>
                      <input type="radio" id="VchkSFCwind"  onChange="javascript:replot_vector('sfcwind');" name='foo' checked>
-                     <span>Superficie</span>
+                     <span>SFCwind</span>
                   </label>
                   <label>
                      <input type="radio" id="VchkBLwind"  onChange="javascript:replot_vector('blwind');" name='foo'>
-                     <span>Promedio</span>
+                     <span>BLwind</span>
                   </label>
                   <label>
                      <input type="radio" id="VchkBLTOPwind"  onChange="javascript:replot_vector('bltopwind');" name='foo'>
-                     <span>Techo</span>
+                     <span>BLTopwind</span>
                   </label>
                </form>
                <hr style="width:85%;">
                <!--   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   SCALAR LAYER   ~~~~~~~~~~~~~~~~~~~~~~~~~~~   -->
                <label style="font-size:150%;">
-                  Aerología:
+                  Scalar Layer:<br>
                   <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="70" oninput="javascript:set_opacity(this.value,['scalar_layer']);">
                </label>
                <form>
-                  <p align='left' style="line-height:1px;">&nbsp;&nbsp;Viento</p>
                   <label>
                      <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked>
-                     <span>Superficie</span>
+                     <span>SFCwind</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkBLwind"  onChange="javascript:replot_scalar('blwind');" name='foo'>
-                     <span >Promedio</span>
+                     <span >BLwind</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkBLTOPwind"  onChange="javascript:replot_scalar('bltopwind');" name='foo'>
-                     <span>Techo</span>
-                  <p align='left' style="line-height:1px;">&nbsp;&nbsp;Térmicas</p>
+                     <span>BLTopwind</span>
+                  </label> <br/>   <!-- XXX forced breakline -->
+                  <label>
+                     <input type="radio" id="SchkHBL"  onChange="javascript:replot_scalar('hbl');" name='foo'>
+                     <span>Height BL</span>
                   </label>
-                  <!-- <br/>   <1!-- XXX forced breakline --1> -->
-                  <!-- <label> -->
-                  <!--    <input type="radio" id="SchkHBL"  onChange="javascript:replot_scalar('hbl');" name='foo'> -->
-                  <!--    <span>Height BL</span> -->
-                  <!-- </label> -->
                   <label>
                      <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('hglider');" name='foo'>
-                     <span>Techo (Azul)</span>
+                     <span>Max. Height Thermal</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkWstar"  onChange="javascript:replot_scalar('wstar');" name='foo'>
-                     <span>Térmica</span>
+                     <span>Thermals</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkCAPE"  onChange="javascript:replot_scalar('cape');" name='foo'>
                      <span>CAPE</span>
                   </label> <br/>
-                  <!-- <label> -->
-                  <!--    <input type="radio" id="SchkBSratio"  onChange="javascript:replot_scalar('bsratio');" name='foo'> -->
-                  <!--    <span>B/S Ratio</span> -->
-                  <!-- </label> -->
                   <label>
-                     <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('wblmaxmin');" name='foo'>
-                     <span>Convergencias</span>
+                     <input type="radio" id="SchkBSratio"  onChange="javascript:replot_scalar('bsratio');" name='foo'>
+                     <span>B/S Ratio</span>
                   </label>
                   <label>
                      <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('wblmaxmin');" name='foo'>
-                     <span>Techo (nube)</span>
-                     <!-- <span>Cu Cloudbase (CuPot&gt0)</span> -->
+                     <span>BL Max. &uarr;/&darr; Motion</span>
+                     <!-- <span>BL Max.Up/Down Motion</span> -->
                   </label>
                </form>
                <hr style="width: 85%;">
                <label style="font-size: 150%;">
-                  Meteo:<br>
+                  Overlay Layer:<br>
                   <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50"
                                                                    oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
                </label>
@@ -166,11 +159,11 @@
                </form>
                <hr>
                <label style="font-size:150%;">
-                  Tipo de Transparencia<br>
+                  Blend Mode<br>
                <div class="custom-select" style="width:200px;">
                   <select id="blend-select">
-                     <option value="1"  onclick="javascript:select_blend()">Darken</option>
-                     <option value="2"  onclick="javascript:select_blend()">Multiply</option>
+                     <option value="1"  onclick="javascript:select_blend()">Multiply</option>
+                     <option value="2"  onclick="javascript:select_blend()">Darken</option>
                      <option value="3"  onclick="javascript:select_blend()">Color-burn</option>
                      <option value="4"  onclick="javascript:select_blend()">Overlay</option>
                      <option value="5"  onclick="javascript:select_blend()">Color</option>
