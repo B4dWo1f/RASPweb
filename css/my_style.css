@@ -7,6 +7,7 @@
    --button-inactiveHover: #1d6bda;
    --button-activeHover: #0053c9;
    --scalar-blend: multiply;
+   --img-max-width:800px;
 /* multiply */
 /* screen */
 /* overlay */
@@ -27,10 +28,11 @@ body {
 
 a, a:active, a:focus {
    outline: none;
+   text-decoration: none;
 }
 
 a:hover{
-   font-weight: bold;
+   /* font-weight: bold; */
    color: white;
 }
 
@@ -45,7 +47,7 @@ input[type="radio"] {
 }
 
 form {
-   font-size:120%;
+   font-size:20px;
 }
 
 div {
@@ -79,24 +81,24 @@ img {
 }
 
 .plot{
-   /* height:500px; */
+   position: relative;
 }
 
-.sidebar{
-   background-color: var(--sideBarColor);
-   font-size:120%;
-   border:1px blue solid;
-   position: fixed;
-   height: 100%;
-   width: 0px;
-   display:none;
-   z-index: 1;
-   top: 0;
-   right: 0;
-   line-height: 200%;
-   overflow-x: hidden;
-   padding-top: 60px;
-}
+/* .sidebar{ */
+/*    background-color: var(--sideBarColor); */
+/*    font-size:120%; */
+/*    border:1px blue solid; */
+/*    position: fixed; */
+/*    height: 100%; */
+/*    width: 0px; */
+/*    display:none; */
+/*    z-index: 1; */
+/*    top: 0; */
+/*    right: 0; */
+/*    line-height: 200%; */
+/*    overflow-x: hidden; */
+/*    padding-top: 60px; */
+/* } */
 
 #options_button{
    position:fixed;
@@ -116,16 +118,18 @@ img {
 
 .Maps {
    /*border:1px solid black;*/
+   max-width: var(--img-max-width);
    position: relative;
-   width: 100%;
+   width: auto; /*100%;*/
    padding: 0px;
    top: 0px;
-   left: 50%;
-   transform: translateX(-50%);
+   /* left: 50%; */
+   /* transform: translateX(-50%); */
    text-align: center;
 }
 
 .base_map {
+   max-width: var(--img-max-width);
    position: static;
    padding: 0px;
    left: 0px;
@@ -137,6 +141,7 @@ img {
 }
 
 .over {
+   max-width: var(--img-max-width);
    position: absolute;
    left: 50%;
    top: 0px;
@@ -148,6 +153,7 @@ img {
 }
 
 .Sover {
+   max-width: var(--img-max-width);
    position: absolute;
    left: 50%;
    top: 0px;
@@ -160,6 +166,7 @@ img {
 }
 
 .Vover {
+   max-width: var(--img-max-width);
    position: absolute;
    left: 50%;
    top: 0px;
@@ -171,6 +178,7 @@ img {
 }
 
 .Oover {
+   max-width: var(--img-max-width);
    position: absolute;
    left: 50%;
    top: 0px;
@@ -230,5 +238,88 @@ img {
 .plot_title {font-size:175%;}
 
 
-.vl {border-left: 2px dashed LightGrey;
-     height: 200px;}
+.vl {
+   border-left: 2px dashed LightGrey;
+     height: 200px;
+}
+
+label {
+   font-size:80%;
+}
+
+#sounding_img {
+   max-width: var(--img-max-width);
+   position: static;
+   padding: 0px;
+   left: 0px;
+   top: 0px;
+   width: 100%;
+   height:auto;
+   z-index: -1;
+   opacity:1;
+}
+
+/*    TEST    */
+.collapsible {     /*expansible button*/
+   max-width: var(--img-max-width);
+   color: var(--textColor);
+   background-color: var(--sideBarColor);
+   /* rgba(50,50,50,0.9); */
+   cursor: pointer;
+   padding-left: 100px;
+   padding-right: 100px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+   width: auto;
+   border: none;
+   text-align: left;
+   outline: none;
+   font-size: 20px;
+   z-index:10;
+}
+
+.active, .collapsible:hover {
+   background-color: #555;
+}
+
+.content {
+   max-width: calc(var(--img-max-width)*1.06);
+   font-size: 14px;
+   padding: 10px;
+   display: none;
+   overflow: hidden;
+   background-color: rgba(10,10,10,0.7);
+}
+
+table {
+   border-collapse: collapse;
+   width: 50%;
+   text-align: left;
+   margin-left:auto;
+   margin-right:auto;
+}
+
+th {
+   text-align: left;
+}
+
+td {
+   padding: 5px;
+   text-align: left;
+   /* border-right: solid 2px var(--textColor); */ 
+   /* border-left: solid 2px var(--textColor); */
+}
+
+.opt_title {
+   font-size: 20px;
+}
+
+.table_sounding {
+   max-width: var(--img-max-width);
+   width: 100%;
+}
+
+#sounding_img {
+   max-width: var(--img-max-width);
+   width: 100%;
+}

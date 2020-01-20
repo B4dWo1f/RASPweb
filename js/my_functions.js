@@ -260,3 +260,10 @@ function select_blend() {
    document.documentElement.style.setProperty('--scalar-blend', blending);
    replot_general();
 }
+
+function sounding_url(S) {
+   var url = 'http://raspuri.mooo.com/RASP/'+sc;
+   url = url + '/FCST/sounding'+S+'.curr.'+hour+'00lst.w2.png';
+   var sounding_img = document.getElementById('sounding_img');
+   sounding_img.src = url;
+}

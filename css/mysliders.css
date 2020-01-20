@@ -14,7 +14,7 @@
    -moz-transition: .2s;
    position: relative;
    /* border:1px; */
-   width: 80%;
+   width: 70%;
    height:  var(--slider-height);
    border-radius: 5px;
    background: #d3d3d3;
