@@ -43,13 +43,39 @@ a:visited{
    color: rgba(255,210,0,1);
 }
 
-input[type="radio"] {
+input {
   margin-top: -1px;
   vertical-align: middle;
 }
 
 form {
-   font-size:20px;
+   font-size: 20px;
+}
+
+.opt_label {
+   font-size: 19px;
+}
+
+.opt_label_dir {
+   font-size: 19px;
+}
+
+@media only screen and (max-width: 600px) {
+   form {
+      font-size: 15px;
+   }
+   .opt_label {
+      font-size: 14px;
+   }
+   .opt_label_dir {
+      font-size: 14px;
+      transform-origin:50% 50%;
+      transform: rotate(-90deg);
+   }
+}
+
+.opt_section {
+   background-color: red;
 }
 
 div {
@@ -295,7 +321,7 @@ label {
 
 table {
    border-collapse: collapse;
-   width: 50%;
+   width: 90%;
    text-align: left;
    margin-left:auto;
    margin-right:auto;

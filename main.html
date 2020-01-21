@@ -70,7 +70,7 @@
          <button type="button" class="collapsible">Opciones</button>
          <div class="content">
              <!-- Vector Layer -->
-            <form>
+            <form class="opt_section">
                <label class="opt_title">Líneas de Viento:</label><br/>
                <label>
                   <input type="radio" id="VchkSFCwind"  onChange="javascript:replot_vector('sfcwind');" name='foo' checked>
@@ -88,10 +88,10 @@
             </form>
             <hr style="width: 85%;">
             <!-- Scalar Layer -->
-            <form>
+            <form class="opt_section">
                <label class="opt_title">Aerología:</label><br/>
                <table>
-                  <td>Viento</td>
+                  <td><p class='opt_label'>Viento</p></td>
                   <td>
                      <label>
                         <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked>Superficie
@@ -129,19 +129,19 @@
                <!--    <input type="radio" id="SchkHBL"  onChange="javascript:replot_scalar('hbl');" name='foo'> -->
                <!--    <span>Height BL</span> -->
                <!-- </label> -->
-               <table style="width:50%;">
+               <table>
                   <tr>
-                     <td rowspan=3> Térmicas </td>
+                     <td rowspan=3><p class='opt_label_dir'>Térmicas</p></td>
                      <td>
                         <label title='Max. Therm. Height (hglider)'>
                            <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('hglider');" name='foo'>
-                           <span>Techo (Azul)</span>
+                           Techo (Azul)
                         </label>
                      </td>
                      <td>
                         <label title='Cu Cloudbase @CuPot>0 (zsfclclmask)'>
                            <input type="radio" id="SchkZsfc"  onChange="javascript:replot_scalar('zsfclcl');" name='foo'>
-                           <span>Base nube</span>
+                           Base nube
                            <!-- <span>Cu Cloudbase (CuPot&gt0)</span> -->
                         </label>
                      </td>
@@ -150,13 +150,13 @@
                      <td>
                         <label title='CAPE (cape)'>
                            <input type="radio" id="SchkCAPE"  onChange="javascript:replot_scalar('cape');" name='foo'>
-                           <span>CAPE</span>
+                           CAPE
                         </label>
                      </td>
                      <td>
                         <label title='Thermal Updraft Velocity (wstar)' >
                            <input type="radio" id="SchkWstar" onChange="javascript:replot_scalar('wstar');" name='foo'>
-                           <span>Térmica</span>
+                           Térmica
                         </label> <br/>
                      </td>
                   </tr>
@@ -164,13 +164,13 @@
                      <td>
                         <label title='BL Max.Up/Down Motion (wblmaxmin)'>
                            <input type="radio" id="SchkWbl"  onChange="javascript:replot_scalar('wblmaxmin');" name='foo'>
-                           <span>Convergencias</span>
+                           Convergencias
                         </label>
                      </td>
                      <td>
                         <label title='OD Cloudbase @ODpot>0 (zblclmask)'>
                            <input type="radio" id="SchkZblcl"  onChange="javascript:replot_scalar('zblcl');" name='foo'>
-                           <span>Cielo cubierto</span>
+                           Cielo cubierto
                         </label>
                      </td>
                   </tr>
@@ -208,10 +208,10 @@
             </form>
             <!-- Cover Layer -->
             <hr style="width: 85%;">
-            <form>
+            <form class="opt_section">
                <label class="opt_title">Meteo:</label><br/>
-               <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off">Nubes y lluvia
-               <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off">Isobaras<br/>
+               <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off"><label>Nubes y lluvia</label>
+               <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off"><label>Isobaras</label><br/>
                <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50" oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
             </form>
             
