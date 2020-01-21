@@ -29,7 +29,7 @@ body {
 a, a:active, a:focus {
    outline: none;
    text-decoration: none;
-   color: white;
+   color: rgba(255,210,0,1);
 }
 
 a:hover{
@@ -39,7 +39,8 @@ a:hover{
 
 a:visited{
    font-weight: bold;
-   color: white;
+   /* color: white; */
+   color: rgba(255,210,0,1);
 }
 
 input[type="radio"] {
