@@ -2,6 +2,7 @@ function change_hour(x) {
    hour = x+hour0;
    var XXX = replot_scalar(Sprop);
    replot_vector(Vprop);
+   sounding_url(sounding)
    var i;
    var id;
    for (i = 0; i < Nhours; i++) {
@@ -29,7 +30,6 @@ function change_domain(x) {
    C_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'blcloudpct',false);
    R_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'rain1',false);
    P_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'mslpress',false);
-   document.getElementById("days").innerHTML = generate_days();
 }
 
 function set_all(folder,domain,sc){
@@ -262,8 +262,11 @@ function select_blend() {
 }
 
 function sounding_url(S) {
-   var url = 'http://raspuri.mooo.com/RASP/'+sc;
-   url = url + '/FCST/sounding'+S+'.curr.'+hour+'00lst.w2.png';
-   var sounding_img = document.getElementById('sounding_img');
-   sounding_img.src = url;
+   sounding = S
+   if (sounding != null) {
+      var url = 'http://raspuri.mooo.com/RASP/'+sc;
+      url = url + '/FCST/sounding'+sounding+'.curr.'+hour+'00lst.w2.png';
+      var sounding_img = document.getElementById('sounding_img');
+      sounding_img.src = url;
+   }
 }

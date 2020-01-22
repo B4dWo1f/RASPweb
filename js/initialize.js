@@ -33,10 +33,11 @@ var domain = 'w2';
 var Oprop = null;
 var Sprop = 'sfcwind';
 var Vprop = 'sfcwind';
+var hour = 14;
 var Ndays = 4;
 var Nhours = 12;
 var hour0 = 8;
-var hour = 14;
+var sounding = null;
 
 /* State variables */
 var Opts_menu = false;
