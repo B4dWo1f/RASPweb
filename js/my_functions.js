@@ -2,7 +2,7 @@ function change_hour(x) {
    hour = x+hour0;
    var XXX = replot_scalar(Sprop);
    replot_vector(Vprop);
-   sounding_url(sounding)
+   sounding_url(sounding);
    var i;
    var id;
    for (i = 0; i < Nhours; i++) {
@@ -52,6 +52,7 @@ function change_day(x) {
    replot_scalar(Sprop);
    replot_vector(Vprop);
    replot_general();
+   sounding_url(sounding);
 }
 
 function replot_general(){
