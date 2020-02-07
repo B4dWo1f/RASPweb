@@ -48,6 +48,7 @@ var plot_title = document.getElementById("Title");
 var TER_layer = document.getElementById('terrain_layer')
 var GND_layer = document.getElementById('gnd_layer')
 var CCA_layer = document.getElementById('ccaa_layer')
+// var TMA_layer = document.getElementById('TMA_layer')
 var RIV_layer = document.getElementById('rivers_layer')
 var ROA_layer = document.getElementById('roads_layer')
 var TAK_layer = document.getElementById('takeoffs_layer')
@@ -65,6 +66,7 @@ update_plot_title(dw,d,Sprop,hour)
 TER_layer.src = get_folder(folder,domain,sc)+'/terrain.png';
 GND_layer.src = get_folder(folder,domain,sc)+'/terrain1.png';
 CCA_layer.src = get_folder(folder,domain,sc)+'/ccaa.png';
+// TMA_layer.src = get_folder(folder,domain,sc)+'/TMA.png';
 RIV_layer.src = get_folder(folder,domain,sc)+'/rivers.png';
 ROA_layer.src = get_folder(folder,domain,sc)+'/roads.png';
 TAK_layer.src = get_folder(folder,domain,sc)+'/takeoffs.png';

@@ -29,6 +29,8 @@
                   <span><img style="vertical-align:middle" src="/telegram.png" width="20"> @parapentebot</span>
                </div>
                </a>
+               <div>English Spanish
+               </div>
             </td>
             <td align="left">
                <font size="+3"><b>RASP</b> Sistema Central</font><br>
@@ -89,9 +91,9 @@
             <hr style="width: 85%;">
             <!-- Scalar Layer -->
             <form class="opt_section">
-               <label class="opt_title">Aerología:</label><br/>
+               <label class="opt_title">Aerología:</label>
                <table>
-                  <td><p class='opt_label'>Viento</p></td>
+                  <td><span class='opt_label'>Viento</span></td>
                   <td>
                      <label>
                         <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked>Superficie
@@ -221,6 +223,7 @@
          <div class="Maps">
             <img class="base_map" id="terrain_layer" style="visibility:visible;">
             <img class="over" id="gnd_layer"         style="visibility:hidden;">
+            <!-- <img class="over" id="TMA_layer"  style="visibility:visible;z-index:1000;"> -->
             <img class="over" id="ccaa_layer"        style="visibility:visible;">
             <img class="over" id="rivers_layer"      style="visibility:visible;">
             <img class="over" id="roads_layer"       style="visibility:hidden;">
