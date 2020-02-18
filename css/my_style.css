@@ -62,7 +62,7 @@ form {
 
 @media only screen and (max-width: 600px) {
    form {
-      font-size: 15px;
+      font-size: 22px;
    }
    .opt_label {
       font-size: 14px;
@@ -320,6 +320,7 @@ label {
 }
 
 table {
+   /* border:1px solid red; */
    border-collapse: collapse;
    width: 90%;
    text-align: left;
