@@ -71,11 +71,11 @@
             </form>
          </div>
 
-         <button type="button" class="collapsible">Opciones</button>
+         <button type="button" class="collapsible"><span id='options' translate>Opciones</span></button>
          <div class="content">
              <!-- Vector Layer -->
             <form class="opt_section">
-               <label class="opt_title">Líneas de Viento:</label><br/>
+               <label class="opt_title"><span id='windlines' translate>Líneas de Viento</span>:</label><br/>
                <label>
                   <input type="radio" id="VchkSFCwind"  onChange="javascript:replot_vector('sfcwind');" name='foo' checked>
                   <!-- <span>Superficie</span> -->
@@ -97,7 +97,7 @@
             <hr style="width: 85%;">
             <!-- Scalar Layer -->
             <form class="opt_section">
-               <label class="opt_title">Aerología:</label>
+               <label class="opt_title"><span id='windlines' translate>Aerología</span>:</label>
                <table>
                   <td><span class='opt_label'>Viento</span></td>
                   <td>
@@ -461,18 +461,7 @@ for (i = 0; i < coll.length; i++) {
 }
 </script>
 <script type="text/javascript" src='js/initialize.js'> </script>
-
-<script>
-function translate(lang) {
-   // define language reload anchors
-   var dataReload = document.querySelectorAll("[translate]");
-   for (i = 0; i < dataReload.length; i++) {
-      var element = dataReload[i];
-      element.textContent = translations[lang][element.id];
-   }
-}
-</script>
-
+<script type="text/javascript" src='js/translations.js'> </script>
 
 </body>
 </html>
