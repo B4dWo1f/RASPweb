@@ -45,5 +45,10 @@ function translate(lang) {
 }
 
 function SetLanguageCookie(lang) {
-   document.cookie = "lang="+lang;
+   var expiration_date = new Date();
+   var cookie_string = '';
+   expiration_date.setFullYear(expiration_date.getFullYear()+1);
+   cookie_string = "lang="+lang+'; path=/; '
+   cookie_string = cookie_string +'expires='+expiration_date.toUTCString();
+   document.cookie = cookie_string;
 }
