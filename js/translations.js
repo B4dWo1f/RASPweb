@@ -3,6 +3,10 @@ var translations = {
       options : 'Options',
       windlines : 'Wind Flow',
       aerology : 'Aerology',
+      ccaa: 'Provinces',
+      rivers: 'Rivers and lakes',
+      roads: 'Roads',
+      takeoffs: 'Takeoffs',
       sfcwind : 'SFCwind',
       blwind : 'BLwind',
       bltopwind : 'BLTOPwind',
@@ -13,12 +17,17 @@ var translations = {
       wblmaxmin: 'BL Max.Up/Down Motion',
       zblcl: 'OD Cloudbase @ODpot>0',
       rain: '%Clouds & rain',
-      press: 'Isobars'
+      press: 'Isobars',
+      days: ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
    },
    es: {
       options : 'Opciones',
       windlines : 'Líneas de Viento',
       aerology : 'Aerología',
+      ccaa: 'Provincias',
+      rivers: 'Ríos y lagos',
+      roads: 'Carreteras',
+      takeoffs: 'Despegues',
       sfcwind : 'Superficie',
       blwind : 'Promedio',
       bltopwind : 'Techo',
@@ -29,18 +38,20 @@ var translations = {
       wblmaxmin: 'Convergencia',
       zblcl: 'Base cobertura (8/8)',
       rain: 'Nubes y lluvia',
-      press: 'Isobaras'
+      press: 'Isobaras',
+      days: ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado']
    }
 };
 
 
 function translate(lang) {
    // define language reload anchors
-   SetLanguageCookie(lang)
+   language = lang
+   SetLanguageCookie(language)
    var dataReload = document.querySelectorAll("[translate]");
    for (i = 0; i < dataReload.length; i++) {
       var element = dataReload[i];
-      element.textContent = translations[lang][element.id];
+      element.textContent = translations[language][element.id];
    }
 }
 

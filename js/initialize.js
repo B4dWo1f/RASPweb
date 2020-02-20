@@ -18,6 +18,7 @@ var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto',
 var SCs = ['SC2', 'SC2+1', 'SC4+2', 'SC4+3']
 
 var today = new Date()
+var language = 'es';
 var UTCshift = today.getTimezoneOffset() / 60;
 var d = today.getDate();
 var dw = days[ today.getDay() ];
@@ -86,14 +87,13 @@ document.getElementById("hours").innerHTML = generate_hours();
 
 function SetLanguage() {
    var lang = getCookie('lang');
-   if (lang == null) {
-      // do cookie doesn't exist stuff;
-      translate('es')
+   if (lang == null) {   // cookie doesn't exist
+      language = 'es';
     }
-    else {
-       // do cookie exists stuff
-       translate(lang)
+    else {               // cookie does exist
+       language = lang;
     }
+    translate(language);
 }
 
 function getCookie(name) {
@@ -117,4 +117,4 @@ function getCookie(name) {
     return decodeURI(dc.substring(begin + prefix.length, end));
 }
 
-SetLanguage()
+var language = SetLanguage()
