@@ -36,9 +36,14 @@ var translations = {
 
 function translate(lang) {
    // define language reload anchors
+   SetLanguageCookie(lang)
    var dataReload = document.querySelectorAll("[translate]");
    for (i = 0; i < dataReload.length; i++) {
       var element = dataReload[i];
       element.textContent = translations[lang][element.id];
    }
+}
+
+function SetLanguageCookie(lang) {
+   document.cookie = "lang="+lang;
 }
