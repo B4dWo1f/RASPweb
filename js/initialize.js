@@ -36,7 +36,7 @@ var Sprop = 'sfcwind';
 var Vprop = 'sfcwind';
 var hour = 14;
 var Ndays = 4;
-var Nhours = 12;
+var Nhours = 13;
 var hour0 = 8;
 var sounding = null;
 
