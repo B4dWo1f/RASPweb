@@ -53,7 +53,7 @@ var CCA_layer = document.getElementById('ccaa_layer')
 var RIV_layer = document.getElementById('rivers_layer')
 var ROA_layer = document.getElementById('roads_layer')
 var TAK_layer = document.getElementById('takeoffs_layer')
-var MAN_layer = document.getElementById('manga_layer')
+// var MAN_layer = document.getElementById('manga_layer')
 // data
 var S_layer = document.getElementById('scalar_layer')
 var V_layer = document.getElementById('vector_layer')
@@ -72,7 +72,7 @@ CCA_layer.src = get_folder(folder,domain,sc)+'/ccaa.png';
 RIV_layer.src = get_folder(folder,domain,sc)+'/rivers.png';
 ROA_layer.src = get_folder(folder,domain,sc)+'/roads.png';
 TAK_layer.src = get_folder(folder,domain,sc)+'/takeoffs.png';
-MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
+// MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
 // meteo
 S_layer.src = get_filename(folder,domain,sc,hour,UTCshift,Sprop,false);
 V_layer.src = get_filename(folder,domain,sc,hour,UTCshift,Vprop,true);

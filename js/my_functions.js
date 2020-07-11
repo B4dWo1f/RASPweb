@@ -27,6 +27,7 @@ function change_domain(x) {
    RIV_layer.src = get_folder(folder,domain,sc)+'/rivers.png';
    ROA_layer.src = get_folder(folder,domain,sc)+'/roads.png';
    TAK_layer.src = get_folder(folder,domain,sc)+'/takeoffs.png';
+   // MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
    C_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'blcloudpct',false);
    R_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'rain1',false);
    P_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'mslpress',false);
@@ -63,6 +64,7 @@ function replot_general(){
    RIV_layer.src = get_folder(folder,domain,sc)+'/rivers.png';
    ROA_layer.src = get_folder(folder,domain,sc)+'/roads.png';
    TAK_layer.src = get_folder(folder,domain,sc)+'/takeoffs.png';
+   // MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
    // special layers
    C_layer.src  = get_filename(folder,domain,sc,hour,UTCshift,'blcloudpct',false);
    P_layer.src  = get_filename(folder,domain,sc,hour,UTCshift,'mslpress',false);
