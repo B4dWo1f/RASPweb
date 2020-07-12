@@ -62,7 +62,7 @@ form {
 
 @media only screen and (max-width: 600px) {
    form {
-      font-size: 15px;
+      font-size: 22px;
    }
    .opt_label {
       font-size: 14px;
@@ -86,6 +86,10 @@ div {
    vertical-align: middle;
 }
 
+.clickable_img {
+   cursor: pointer;
+}
+
 img {
    max-width:100%;
    height:auto;
@@ -96,6 +100,12 @@ img {
    width: 100%;
    height: auto;
    text-align: center;
+}
+
+.header_table {
+   /* border:1px blue solid; */
+   width: 100%;
+   max-width: var(--img-max-width);
 }
 
 .full_content{
@@ -320,6 +330,7 @@ label {
 }
 
 table {
+   /* border:1px solid red; */
    border-collapse: collapse;
    width: 90%;
    text-align: left;
@@ -327,16 +338,16 @@ table {
    margin-right:auto;
 }
 
-th {
-   text-align: left;
-}
+/* th { */
+/*    text-align: left; */
+/* } */
 
-td {
-   padding: 5px;
-   text-align: left;
-   /* border-right: solid 2px var(--textColor); */ 
-   /* border-left: solid 2px var(--textColor); */
-}
+/* td { */
+/*    padding: 5px; */
+/*    text-align: left; */
+/*    /1* border-right: solid 2px var(--textColor); *1/ */ 
+/*    /1* border-left: solid 2px var(--textColor); *1/ */
+/* } */
 
 .opt_title {
    font-size: 20px;

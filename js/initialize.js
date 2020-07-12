@@ -18,6 +18,7 @@ var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto',
 var SCs = ['SC2', 'SC2+1', 'SC4+2', 'SC4+3']
 
 var today = new Date()
+var language = 'es';
 var UTCshift = today.getTimezoneOffset() / 60;
 var d = today.getDate();
 var dw = days[ today.getDay() ];
@@ -35,7 +36,7 @@ var Sprop = 'sfcwind';
 var Vprop = 'sfcwind';
 var hour = 14;
 var Ndays = 4;
-var Nhours = 12;
+var Nhours = 13;
 var hour0 = 8;
 var sounding = null;
 
@@ -52,6 +53,7 @@ var CCA_layer = document.getElementById('ccaa_layer')
 var RIV_layer = document.getElementById('rivers_layer')
 var ROA_layer = document.getElementById('roads_layer')
 var TAK_layer = document.getElementById('takeoffs_layer')
+// var MAN_layer = document.getElementById('manga_layer')
 // data
 var S_layer = document.getElementById('scalar_layer')
 var V_layer = document.getElementById('vector_layer')
@@ -70,6 +72,7 @@ CCA_layer.src = get_folder(folder,domain,sc)+'/ccaa.png';
 RIV_layer.src = get_folder(folder,domain,sc)+'/rivers.png';
 ROA_layer.src = get_folder(folder,domain,sc)+'/roads.png';
 TAK_layer.src = get_folder(folder,domain,sc)+'/takeoffs.png';
+// MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
 // meteo
 S_layer.src = get_filename(folder,domain,sc,hour,UTCshift,Sprop,false);
 V_layer.src = get_filename(folder,domain,sc,hour,UTCshift,Vprop,true);
@@ -83,3 +86,37 @@ CB_R_layer.src = folder+'/'+'rain1.png';
 document.getElementById("days").innerHTML = generate_days();
 
 document.getElementById("hours").innerHTML = generate_hours();
+
+function SetLanguage() {
+   var lang = getCookie('lang');
+   if (lang == null) {   // cookie doesn't exist
+      language = 'es';
+    }
+    else {               // cookie does exist
+       language = lang;
+    }
+    translate(language);
+}
+
+function getCookie(name) {
+    var dc = document.cookie;
+    var prefix = name + "=";
+    var begin = dc.indexOf("; " + prefix);
+    if (begin == -1) {
+        begin = dc.indexOf(prefix);
+        if (begin != 0) return null;
+    }
+    else
+    {
+        begin += 2;
+        var end = document.cookie.indexOf(";", begin);
+        if (end == -1) {
+        end = dc.length;
+        }
+    }
+    // because unescape has been deprecated, replaced with decodeURI
+    //return unescape(dc.substring(begin + prefix.length, end));
+    return decodeURI(dc.substring(begin + prefix.length, end));
+}
+
+var language = SetLanguage()

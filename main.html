@@ -18,17 +18,21 @@
 <body>
 <!-- ~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~ -->
    <div class="header">
-      <table align="center">
+      <table class='header_table'>
          <tr>
             <td align="right">
+               <div style='float:right;'>
                <a href="http://www.denubeanube.com/">
                   <img src="/dnn_dark.svg" alt="De Nube a Nube" width="180" align="center">
                </a><br/>
                <a href='https://t.me/parapentebot' target="_blank" style="">
-               <div>
-                  <span><img style="vertical-align:middle" src="/telegram.png" width="20"> @parapentebot</span>
-               </div>
+               <div><span><img style="vertical-align:middle" src="/telegram.png" width="20"> @parapentebot</span></div>
                </a>
+                  <img class='clickable_img' width=20px src="/uk.png" onclick="javascript:translate('en')">
+                  <img class='clickable_img' width=20px src="/spain.png" onclick="javascript:translate('es')">
+               </div>
+            </td>
+            <td style='width:5px;'>
             </td>
             <td align="left">
                <font size="+3"><b>RASP</b> Sistema Central</font><br>
@@ -67,46 +71,50 @@
             </form>
          </div>
 
-         <button type="button" class="collapsible">Opciones</button>
+         <button type="button" class="collapsible"><span id='options' translate>Opciones</span></button>
          <div class="content">
              <!-- Vector Layer -->
             <form class="opt_section">
-               <label class="opt_title">Líneas de Viento:</label><br/>
+               <label class="opt_title"><span id='windlines' translate>Líneas de Viento</span>:</label><br/>
                <label>
                   <input type="radio" id="VchkSFCwind"  onChange="javascript:replot_vector('sfcwind');" name='foo' checked>
-                  <span>Superficie</span>
+                  <!-- <span>Superficie</span> -->
+                  <span id='sfcwind' translate>Superficie</span>
+
                </label>
                <label>
                   <input type="radio" id="VchkBLwind"  onChange="javascript:replot_vector('blwind');" name='foo'>
-                  <span>Promedio</span>
+                  <!-- <span>Promedio</span> -->
+                  <span id='blwind' translate>Promedio</span>
                </label>
                <label>
                   <input type="radio" id="VchkBLTOPwind"  onChange="javascript:replot_vector('bltopwind');" name='foo'>
-                  <span>Techo</span>
+                  <!-- <span>Techo</span> -->
+                  <span id='bltopwind' translate>Techo</span>
                </label><br/>
                <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="65" oninput="javascript:set_opacity(this.value,['vector_layer']);">
             </form>
             <hr style="width: 85%;">
             <!-- Scalar Layer -->
             <form class="opt_section">
-               <label class="opt_title">Aerología:</label>
+               <label class="opt_title"><span id='windlines' translate>Aerología</span>:</label>
                <table>
                   <td><span class='opt_label'>Viento</span></td>
                   <td>
                      <label>
-                        <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked>Superficie
+                        <input type="radio" id="SchkSFCwind"  onChange="javascript:replot_scalar('sfcwind');" name='foo' checked><span id='sfcwind' translate>Superficie</span> <!-- Superficie -->
                      </label>
                   </td>
                   <td>
                <label>
                   <input type="radio" id="SchkBLwind"  onChange="javascript:replot_scalar('blwind');" name='foo'>
-                  <span >Promedio</span>
+                  <span id='blwind' translate>Promedio</span>
                </label>
                </td>
                <td>
                <label>
                   <input type="radio" id="SchkBLTOPwind"  onChange="javascript:replot_scalar('bltopwind');" name='foo'>
-                  <span>Techo</span>
+                  <span id='bltopwind' translate>Techo</span>
                </label>
                </td>
                </table>
@@ -135,14 +143,13 @@
                      <td>
                         <label title='Max. Therm. Height (hglider)'>
                            <input type="radio" id="SchkHglider"  onChange="javascript:replot_scalar('hglider');" name='foo'>
-                           Techo (Azul)
+                           <span id='hgldier' translate>Techo (Azul)</span>
                         </label>
                      </td>
                      <td>
                         <label title='Cu Cloudbase @CuPot>0 (zsfclclmask)'>
                            <input type="radio" id="SchkZsfc"  onChange="javascript:replot_scalar('zsfclcl');" name='foo'>
-                           Base nube
-                           <!-- <span>Cu Cloudbase (CuPot&gt0)</span> -->
+                           <span id='zsfclcl' translate>Base cúmulos</span>
                         </label>
                      </td>
                   </tr>
@@ -150,13 +157,13 @@
                      <td>
                         <label title='CAPE (cape)'>
                            <input type="radio" id="SchkCAPE"  onChange="javascript:replot_scalar('cape');" name='foo'>
-                           CAPE
+                           <span id='cape' translate>CAPE</span>
                         </label>
                      </td>
                      <td>
                         <label title='Thermal Updraft Velocity (wstar)' >
                            <input type="radio" id="SchkWstar" onChange="javascript:replot_scalar('wstar');" name='foo'>
-                           Térmica
+                           <span id='wstar' translate>Térmica</span>
                         </label> <br/>
                      </td>
                   </tr>
@@ -164,13 +171,14 @@
                      <td>
                         <label title='BL Max.Up/Down Motion (wblmaxmin)'>
                            <input type="radio" id="SchkWbl"  onChange="javascript:replot_scalar('wblmaxmin');" name='foo'>
-                           Convergencias
+                           <span id='wblmaxmin' translate>Convergencia</span>
                         </label>
                      </td>
                      <td>
                         <label title='OD Cloudbase @ODpot>0 (zblclmask)'>
                            <input type="radio" id="SchkZblcl"  onChange="javascript:replot_scalar('zblcl');" name='foo'>
-                           Cielo cubierto
+                           <!-- Cielo cubierto -->
+                           <span id='zblcl' translate>Base cobertura (8/8)</span>
                         </label>
                      </td>
                   </tr>
@@ -210,8 +218,8 @@
             <hr style="width: 85%;">
             <form class="opt_section">
                <label class="opt_title">Meteo:</label><br/>
-               <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off"><label>Nubes y lluvia</label>
-               <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off"><label>Isobaras</label><br/>
+               <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off"><label><span id='rain' translate>Nubes y lluvia</span></label>
+               <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off"><label><span id='press' translate>Isobaras</label><br/>
                <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50" oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
             </form>
             
@@ -226,6 +234,7 @@
             <img class="over" id="rivers_layer"      style="visibility:visible;">
             <img class="over" id="roads_layer"       style="visibility:hidden;">
             <img class="over" id="takeoffs_layer"    style="visibility:visible; z-index: 10;">
+            <!-- <img class="over" id="manga_layer"    style="visibility:visible; z-index: 100;"> -->
             <!-- Meteo -->
             <img class="Sover" id="scalar_layer"     style="visibility:visible;">
             <img class="Vover" id="vector_layer"     style="visibility:visible;">
@@ -452,6 +461,7 @@ for (i = 0; i < coll.length; i++) {
    });
 }
 </script>
+<script type="text/javascript" src='js/translations.js'> </script>
 <script type="text/javascript" src='js/initialize.js'> </script>
 
 </body>
