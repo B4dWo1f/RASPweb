@@ -63,11 +63,24 @@
          <!-- GIS -->
          <div style="padding-bottom: 2px;">
             <form>
-               <input type="checkbox" id="chkGnd"    onChange="javascript:toggleVisibility(['gnd_layer']);" autocomplete="off">Color
-               <input type="checkbox" id="chkCCAA"   onChange="javascript:toggleVisibility(['ccaa_layer']);" checked autocomplete="off">Provincias
-               <input type="checkbox" id="chkRivers" onChange="javascript:toggleVisibility(['rivers_layer']);" checked autocomplete="off">Ríos y lagos
-               <input type="checkbox" id="chkRoads"  onChange="javascript:toggleVisibility(['roads_layer']);"  autocomplete="off">Carreteras
-               <input type="checkbox" id="chkRoads"  onChange="javascript:toggleVisibility(['takeoffs_layer']);" checked autocomplete="off">Despegues
+               <label class="opt_title">
+                  <input type="checkbox" id="chkGnd"      onChange="javascript:toggleVisibility(['gnd_layer']);" autocomplete="off">Color
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkCCAA"     onChange="javascript:toggleVisibility(['ccaa_layer']);" checked autocomplete="off">Provincias
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkRivers"   onChange="javascript:toggleVisibility(['rivers_layer']);" checked autocomplete="off">Ríos y lagos
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkRoads"    onChange="javascript:toggleVisibility(['roads_layer']);"  autocomplete="off">Carreteras
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkTakeoffs" onChange="javascript:toggleVisibility(['takeoffs_layer']);" checked autocomplete="off">Despegues
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkNames"    onChange="javascript:toggleVisibility(['names_layer']);" autocomplete="off">Nombres
+               </label>
             </form>
          </div>
 
@@ -218,8 +231,14 @@
             <hr style="width: 85%;">
             <form class="opt_section">
                <label class="opt_title">Meteo:</label><br/>
-               <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off"><label><span id='rain' translate>Nubes y lluvia</span></label>
-               <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off"><label><span id='press' translate>Isobaras</label><br/>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkSFCwind" onChange="javascript:toggleVisibility(['clouds_layer','rain_layer']);" autocomplete="off">
+                  <span id='rain' translate>Nubes y lluvia</span>
+               </label>
+               <label class="opt_title">
+                  <input type="checkbox" id="chkBLwind"  onChange="javascript:toggleVisibility(['press_layer']);" autocomplete="off">
+                  <span id='press' translate>Isobaras<br/>
+               </label>
                <input id="SliderOpacity" class="slider_opacity" type="range" min="0" max="100" value="50" oninput="javascript:set_opacity(this.value,['clouds_layer','rain_layer','press_layer']);">
             </form>
             
@@ -235,6 +254,8 @@
             <img class="over" id="roads_layer"       style="visibility:hidden;">
             <img class="over" id="takeoffs_layer"    style="visibility:visible; z-index: 10;">
             <!-- <img class="over" id="manga_layer"    style="visibility:visible; z-index: 100;"> -->
+            <img class="over" id="names_layer"    style="visibility:hidden; z-index: 100;">
+            <img class="over" id="cities_layer"    style="visibility:visible; z-index: 100;">
             <!-- Meteo -->
             <img class="Sover" id="scalar_layer"     style="visibility:visible;">
             <img class="Vover" id="vector_layer"     style="visibility:visible;">
