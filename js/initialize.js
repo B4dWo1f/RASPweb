@@ -17,7 +17,7 @@ var days = ['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'
 var months = ['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
 var SCs = ['SC2', 'SC2+1', 'SC4+2', 'SC4+3']
 
-var today = new Date()
+var today = new Date();
 var language = 'es';
 var UTCshift = today.getTimezoneOffset() / 60;
 var d = today.getDate();
@@ -36,7 +36,7 @@ var Sprop = 'sfcwind';
 var Vprop = 'sfcwind';
 var hour = 14;
 var Ndays = 4;
-var Nhours = 13;
+var Nhours = 12;  // 13 for CES(summer);  12 for CET(winter)
 var hour0 = 8;
 var sounding = null;
 

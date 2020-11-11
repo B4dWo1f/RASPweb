@@ -144,6 +144,8 @@ function get_folder(fol,dom,sc){
 }
 
 function get_filename(fol,dom,sc,hour,UTCshift,prop,isvec){
+   //This function handles the UTC-shift for calling the correct file
+   //"hour" is passed in local time, the files are stored in UTC time
    var utc_hour = (hour+UTCshift).toString().padStart(2, '0');
    var fname = fol+'/'+dom+'/'+sc+'/'+ utc_hour +'00_'+prop;
    if (isvec===true){
