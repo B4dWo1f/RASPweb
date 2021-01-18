@@ -1,6 +1,6 @@
 function change_hour(x) {
    hour = x+hour0;
-   var XXX = replot_scalar(Sprop);
+   replot_scalar(Sprop);
    replot_vector(Vprop);
    sounding_url(sounding);
    var i;
@@ -71,6 +71,7 @@ function replot_general(){
    // MAN_layer.src = get_folder(folder,domain,sc)+'/manga.png';
    // special layers
    C_layer.src  = get_filename(folder,domain,sc,hour,UTCshift,'blcloudpct',false);
+   R_layer.src= get_filename(folder,domain,sc,hour,UTCshift,'rain1',false);
    P_layer.src  = get_filename(folder,domain,sc,hour,UTCshift,'mslpress',false);
    CB_layer.src = folder+'/'+Sprop+'.png';
    //plot_title.innerHTML = dw+' '+d+' '+title_prop[Sprop]+' '+hour+':00';
